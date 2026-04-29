@@ -1,0 +1,136 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,30,0.75), rgba(10,10,30,0.9));
+}
+
+.contenido {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 700px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(233, 69, 96, 0.2);
+  border: 1px solid #e94560;
+  color: #e94560;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.titulo {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #e94560;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 550px;
+  line-height: 1.7;
+}
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.botonPrimario {
+  background-color: #e94560;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+}
+
+.botonPrimario:hover {
+  transform: scale(1.05);
+  background-color: #c73652;
+}
+
+.botonSecundario {
+  background-color: transparent;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid white;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.botonSecundario:hover {
+  transform: scale(1.05);
+  background-color: white;
+  color: #1a1a2e;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 2rem;
+  color: white;
+  font-size: 1.5rem;
+  z-index: 1;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+}
